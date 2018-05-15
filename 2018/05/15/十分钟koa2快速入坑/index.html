@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="十分钟koa2快速入坑 最近因为一个项目的原因，简单了解了koa2框架。为了帮助小伙伴们刚好的入坑，特整理此文。 为啥入坑koa2？  koa2小而美，相比express更小、更健壮、更富有表现力。 全面支持ES6/ES7语法； 结构优雅，易于扩展，360的thinkjs，阿里的egg.js全部基于koa2开发，源代码只有4个文件，500行代码； 站在 2018 年的节点来看，Koa2 的学习大潮">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="十分钟koa2快速入坑 最近因为一个项目的原因，简单了解了koa2框架。为了帮助小伙伴们刚好的入坑，特整理此文。 为啥入坑koa2？  koa2小而美，相比express更小、更健壮、更富有表现力。 全面支持ES6/ES7语法； 结构优雅，易于扩展，360的thinkjs，阿里的egg.js全部基于koa2开发，源代码只有4个文件，500行代码； 站在 2018 年的节点来看，Koa2 的学习大潮">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263744479883.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263745240145.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263745571835.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263745743698.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263746682551.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263747373333.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263747427072.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263747633150.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263747705512.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263748325240.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263748396979.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263748493895.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263748588046.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263748663661.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263748809188.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263748845653.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263748945923.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263749116069.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263749193566.jpg">
+<meta property="og:updated_time" content="2018-05-15T09:05:05.751Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="十分钟koa2快速入坑 最近因为一个项目的原因，简单了解了koa2框架。为了帮助小伙伴们刚好的入坑，特整理此文。 为啥入坑koa2？  koa2小而美，相比express更小、更健壮、更富有表现力。 全面支持ES6/ES7语法； 结构优雅，易于扩展，360的thinkjs，阿里的egg.js全部基于koa2开发，源代码只有4个文件，500行代码； 站在 2018 年的节点来看，Koa2 的学习大潮">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/media/15263744179620/15263744479883.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-十分钟koa2快速入坑" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/15/十分钟koa2快速入坑/" class="article-date">
+  <time datetime="2018-05-15T08:53:37.963Z" itemprop="datePublished">2018-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="十分钟koa2快速入坑"><a href="#十分钟koa2快速入坑" class="headerlink" title="十分钟koa2快速入坑"></a>十分钟koa2快速入坑</h1><p><img src="media/15263744179620/15263744479883.jpg" alt=""></p>
+<p>最近因为一个项目的原因，简单了解了koa2框架。为了帮助小伙伴们刚好的入坑，特整理此文。</p>
+<p>为啥入坑koa2？</p>
+<ul>
+<li>koa2小而美，相比express更小、更健壮、更富有表现力。</li>
+<li>全面支持ES6/ES7语法；</li>
+<li>结构优雅，易于扩展，360的thinkjs，阿里的egg.js全部基于koa2开发，源代码只有4个文件，500行代码；</li>
+<li>站在 2018 年的节点来看，Koa2 的学习大潮已经到来；</li>
+</ul>
+<h2 id="Node-js技术栈Web服务框架的发展"><a href="#Node-js技术栈Web服务框架的发展" class="headerlink" title="Node.js技术栈Web服务框架的发展"></a>Node.js技术栈Web服务框架的发展</h2><h3 id="没有轮子的年代"><a href="#没有轮子的年代" class="headerlink" title="没有轮子的年代"></a>没有轮子的年代</h3><p>早期nodejs就提供了http服务的能力，当时人们已经开始尝试使用nodejs提供web服务，类似这样：<br><img src="media/15263744179620/15263745240145.jpg" alt=""></p>
+<p>没有轮子，高级一些的功能和用法全部需要自己编码实现。。</p>
+<h4 id="英雄登场"><a href="#英雄登场" class="headerlink" title="英雄登场"></a>英雄登场</h4><p>为了降低人们的重复性劳动，更高效的使用nodejs搭建web服务，人们开始发明各种轮子。express是其中最流行的web框架，后来又出现了koa，koa2，hap。</p>
+<p><img src="media/15263744179620/15263745571835.jpg" alt=""></p>
+<p>再后来，基于koa，又出现了一些企业级的开发框架，例如360的thinkjs,最近，阿里也开源了它的基于koa2的框架-egg.js。这也证明了koa框架本身结构分拆的优秀，然而，无论是express 还是 koa，这些框架都来自一人之手，TJ。</p>
+<p>TJ何许人也，前端的小伙伴们可能了解这位大神。看下面这个图：<br><img src="media/15263744179620/15263745743698.jpg" alt=""></p>
+<p>他的自我介绍：TJ Holowaychuk，程序员兼艺术家，Koa、Co、Express、jade、mocha、node-canvas、commander.js等知名开源项目的创建和贡献者。<br>社区影响：<br><a href="https://nodejsmodules.org" target="_blank" rel="noopener">https://nodejsmodules.org</a> 第一页出现次数最多的那个少年，<br>高产到令人发指，Quora上甚至有人猜测TJ不是一个人，而事实上他就是一个人。<br>substack/npmtop：对node npm社区代码贡献截止目前占到整个社区的3.04%。<br>好，膜拜完大神，我们继续看nodejs框架的发展。</p>
+<h4 id="初代英雄Express诞生"><a href="#初代英雄Express诞生" class="headerlink" title="初代英雄Express诞生"></a>初代英雄Express诞生</h4><p><img src="media/15263744179620/15263746682551.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">app.get(&apos;/&apos;, function(req, res)&#123;</span><br><span class="line">  res.send(&apos;hello world&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(3000);</span><br></pre></td></tr></table></figure>
+<p>Express 早期提供了web服务器各种常用功能的全家桶，提供了例如路由、表单解析等功能模块，中后期做了大量的拆分，将大部分模块都独立出来官方自行维护，或者是采用社区其他开发者提供的中间件模块。虽然进行了拆分，但Express总体来说是相对大而全，API 较为丰富的框架，并且它的整个中间件模型是基于 callback 回调，而 callback 随着逻辑增多，会出现callback hell的问题。</p>
+<p>而且express对于中间件完全是顺序调用的，对于一些需要流程控制的场景，解决方案比较复杂。于是TJ大神开动异于常人的脑回路，设计了Koa。</p>
+<h4 id="二代目-Koa登场-我们不一样"><a href="#二代目-Koa登场-我们不一样" class="headerlink" title="二代目-Koa登场 - 我们不一样"></a>二代目-Koa登场 - 我们不一样</h4><p><img src="media/15263744179620/15263747373333.jpg" alt=""></p>
+<p><img src="media/15263744179620/15263747427072.jpg" alt=""></p>
+<p>Koa 从一开始就选择了跟 Express 完全不同的架构方向。</p>
+<p>首先Koa 与 Express 是在做同样事情上的不同实现，所以意味着他俩对外提供的能力大部分是相同的，我们看不同的地方：Koa 从一开始就是按照功能模块划分，各司其职。koa的 context，也就是 ctx，上面有很多引用，最核心的是 request 和 response，这俩可以对应到 Express 两个对立的 req 和 res，在 Koa 里面，把它俩都集中到 ctx 里面进行管理，分别通过 ctx.request 和 ctx.reponse 进行直接访问，原来 Express 两个独立对象做的事情，现在一个 ctx 就够了，上下文对象都在他手中，想要联系谁就能联系谁。 其次是它的中间件机制，Koa 真正的魅力所在，后面中间件环节，我们会对此进行介绍。</p>
+<h4 id="三代目koa2"><a href="#三代目koa2" class="headerlink" title="三代目koa2"></a>三代目koa2</h4><p><img src="media/15263744179620/15263747633150.jpg" alt=""></p>
+<p><img src="media/15263744179620/15263747705512.jpg" alt=""></p>
+<p>函数式编程，ES7官方标准异步方案： async/await，你值得拥有。</p>
+<p>目前的koa官方github已经全面的使用koa2版本的代码了，并且有一句非常重要的提示Koa requires node v7.6.0 or higher for ES2015 and async function support.。意思是说，koa需要至少node v7.6.0版本和ES2015(es6+async)才能使用。</p>
+<p>koa2结合了async/await已经成为了最好的web开发框架。</p>
+<p>Koa1 和 koa 框架模型，API基本相同，但是两者的中间件互不兼容，（底层实现不同），官方提供了方便的升级工具，可实现升级。</p>
+<h4 id="koa2框架定位："><a href="#koa2框架定位：" class="headerlink" title="koa2框架定位："></a>koa2框架定位：</h4><ul>
+<li>更小、更健壮、更富有表现力；</li>
+<li>免除重复繁琐的回调函数嵌套；</li>
+<li>极大地提升错误处理的效率；</li>
+<li>轻量、优雅，仅提供web服务最基础的函数库；</li>
+<li>通过中间件扩展实现不同的高级需求；</li>
+</ul>
+<p><img src="media/15263744179620/15263748325240.jpg" alt=""></p>
+<p>koa2的源码只有四个文件，500行左右。只提供封装好http上下文、请求、响应，以及基于async/await的中间件调用机制。源码阅读此处不具体展开，有兴趣可以阅读下。</p>
+<h2 id="koa2语法"><a href="#koa2语法" class="headerlink" title="koa2语法"></a>koa2语法</h2><h3 id="服务实例创建"><a href="#服务实例创建" class="headerlink" title="服务实例创建"></a>服务实例创建</h3><p><img src="media/15263744179620/15263748396979.jpg" alt=""></p>
+<h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><p>上图中，app.use(function)方法中的function就是一个最简单的中间件，通过多次app.use()方法可以在koa2框架中注册多个中间件。如下图所示：<br><img src="media/15263744179620/15263748493895.jpg" alt=""></p>
+<p>与express最大的不同点，就是中间件再也不是顺序执行，而是类似洋葱和堆栈，先进后出的流程，这样可以提供更好的流程控制，例如日志处理。</p>
+<p>著名的洋葱模型：<br><img src="media/15263744179620/15263748588046.jpg" alt=""></p>
+<p>以上代码请求结果如下图所示：<br><img src="media/15263744179620/15263748663661.jpg" alt=""></p>
+<h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><p>koa2本身不提供路由模块，但是通过引入独立的路由模块，就可以提供类似express的路由能力，代码如下图：<br><img src="media/15263744179620/15263748809188.jpg" alt=""></p>
+<p><img src="media/15263744179620/15263748845653.jpg" alt=""></p>
+<p>以上方式实现了接口和业务逻辑的分离，可以提高业务逻辑代码的复用，职责分离。</p>
+<h4 id="静态资源服务"><a href="#静态资源服务" class="headerlink" title="静态资源服务"></a>静态资源服务</h4><p>koa2通过引入独立的模块，可实现类似nginx的静态资源服务能力，如果不需要反向代理等能力，甚至都不需要部署nginx了。可参考以下代码：<br><img src="media/15263744179620/15263748945923.jpg" alt=""></p>
+<h4 id="SSR后端渲染"><a href="#SSR后端渲染" class="headerlink" title="SSR后端渲染"></a>SSR后端渲染</h4><p>为了提高首屏加载速度，有时候需要进行后端渲染，koa2通过加载其他模块也可以支持，代码参考如下：</p>
+<h1 id="安装koa模板使用中间件-npm-install-–save-koa-views"><a href="#安装koa模板使用中间件-npm-install-–save-koa-views" class="headerlink" title="安装koa模板使用中间件 npm install –save koa-views"></a>安装koa模板使用中间件 npm install –save koa-views</h1><p><img src="media/15263744179620/15263749116069.jpg" alt=""></p>
+<h1 id="安装ejs模板引擎-npm-install-–save-ejs"><a href="#安装ejs模板引擎-npm-install-–save-ejs" class="headerlink" title="安装ejs模板引擎 npm install –save ejs"></a>安装ejs模板引擎 npm install –save ejs</h1><p><img src="media/15263744179620/15263749193566.jpg" alt=""></p>
+<h4 id="mongodb-数据库操作"><a href="#mongodb-数据库操作" class="headerlink" title="mongodb 数据库操作"></a>mongodb 数据库操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">//npm install --save monk</span><br><span class="line"></span><br><span class="line">//连接数据库</span><br><span class="line"></span><br><span class="line">const monk = require(&apos;monk’); </span><br><span class="line"></span><br><span class="line">const url = &apos;localhost:27017/xgllseo’; </span><br><span class="line"></span><br><span class="line">const db = monk(url);</span><br><span class="line"></span><br><span class="line">//创建一个集合并插入自增数据</span><br><span class="line"></span><br><span class="line">db.createCollection(&quot;counters&quot;) db.counters.insert(&#123;_id:&quot;productid&quot;,sequence_value:1&#125;)</span><br><span class="line"></span><br><span class="line">//增</span><br><span class="line"></span><br><span class="line">db.get(&apos;集合&apos;).insert([&#123; woot: &apos;bar&apos; &#125;, &#123; woot: &apos;baz&apos; &#125;])</span><br><span class="line"></span><br><span class="line">//删</span><br><span class="line"></span><br><span class="line">db.get(&apos;集合&apos;).remove(&#123;&quot;_id&quot;:1&#125;); </span><br><span class="line"></span><br><span class="line">//改</span><br><span class="line"></span><br><span class="line">db.get(&apos;集合&apos;).update(&#123;name: &apos;旧数据&apos;&#125;, &#123;name: &apos;新数据’&#125;)</span><br><span class="line"></span><br><span class="line">//查</span><br><span class="line"></span><br><span class="line">db.get(&apos;集合&apos;).find(&#123;&quot;_id&quot;:1&#125;).then((doc)=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="MySQL-数据库操作"><a href="#MySQL-数据库操作" class="headerlink" title="MySQL 数据库操作"></a>MySQL 数据库操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># npm install mysql-pro</span><br><span class="line">// init</span><br><span class="line">var Client = require(&quot;mysql-pro&quot;); </span><br><span class="line">var client = new Client(&#123; </span><br><span class="line">	mysql: &#123; </span><br><span class="line">		host: &quot;127.0.0.1&quot;, </span><br><span class="line">		port: 3306, </span><br><span class="line">		database: &quot;db&quot;, </span><br><span class="line">		user: &quot;root&quot;, </span><br><span class="line">		password: &quot;123456&quot; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// basic query</span><br><span class="line">client.query(“select * from user where id = ?;”, [1]).then(function(result) &#123; </span><br><span class="line">	// use result </span><br><span class="line">&#125;, function(error)&#123; </span><br><span class="line">	// error </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//transaction</span><br><span class="line">async function() &#123; </span><br><span class="line">	await client.startTransaction(); </span><br><span class="line">	await client.executeTransaction(&quot;select * from user;&quot;, []); </span><br><span class="line">	await client.executeTransaction(&quot;update user set age = ? where id = ?;&quot;, [2, 1]);</span><br><span class="line"> 	await client.stopTransaction(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上，对koa2的一些常见语法给出了样例参考。</p>
+<p>2018年koa2的生态系统已经比较完善，各大厂也基于koa2进行了封装，开源了一些面向工程和业务实践的框架，例如egg.js。</p>
+<p>关于Koa2的讲解就先分析到这，希望对大家有所帮助。如有不同的看法，欢迎交流！</p>
+<p>另附：<a href="https://500px.com/tjholowaychuk" target="_blank" rel="noopener">TJ摄影佳作欣赏</a></p>
+<h5 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h5><ul>
+<li><a href="https://chenshenhai.github.io/koa2-note/" target="_blank" rel="noopener">https://chenshenhai.github.io/koa2-note/</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26216336" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/26216336</a></li>
+<li><a href="https://dongliang1993.github.io/2017/12/06/koa2-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%B8%80/" target="_blank" rel="noopener">https://dongliang1993.github.io/2017/12/06/koa2-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%B8%80/</a></li>
+<li><a href="https://juejin.im/post/5a6dda1d5188257330612d88" target="_blank" rel="noopener">https://juejin.im/post/5a6dda1d5188257330612d88</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/15/十分钟koa2快速入坑/" data-id="cjh7guuvv0002das63adkl3c0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/15/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/15/十分钟koa2快速入坑/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/15/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/09/test/">test</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
